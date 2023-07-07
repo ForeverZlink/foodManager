@@ -1,5 +1,7 @@
 package com.example.foodManager.models;
 
+
+import com.example.foodManager.interfaces.ObjectWithCanHavePrice;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -16,6 +18,17 @@ public class RegisterOfPrices {
     public Date dateOfCreationOfPrice;
 
     private String moneyIdentifier;
+
+    @ManyToOne
+    public ObjectWithCanHavePrice objectOfRelatedPrice;
+
+    public ObjectWithCanHavePrice getObjectOfRelatedPrice() {
+        return objectOfRelatedPrice;
+    }
+
+    public void setObjectOfRelatedPrice(ObjectWithCanHavePrice objectOfRelatedPrice) {
+        this.objectOfRelatedPrice = objectOfRelatedPrice;
+    }
 
     public String getMoneyIdentifier() {
         return moneyIdentifier;
